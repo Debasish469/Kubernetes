@@ -7,7 +7,7 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 variables:
-  imageName: 'demoreg12.azurecr.io/:$(build.buildId)'
+  imageName: 'demoreg12.azurecr.io/tomcat:$(build.buildId)'
 
 steps:
 - script: docker build -f Dockerfile -t $(imageName) .
