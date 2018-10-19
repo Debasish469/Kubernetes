@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    name: tomcat02
+    tier: development
+  name: tomcat02
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: tomcat02
+      tier: development
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name: tomcat02
+        tier: development
+    spec:
+      containers:
+      - image: demoreg12.azurecr.io/tomcat:latest
+        imagePullPolicy: Always
+        name: tomcat02
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 300m
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+      imagePullSecrets:
+      - name: acr-auth
