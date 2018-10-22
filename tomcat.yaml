@@ -2,15 +2,15 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    name: tomcat03
+    name: tomcat04
     tier: development
-  name: tomcat03
+  name: tomcat04
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: tomcat03
+      name: tomcat04
       tier: development
   strategy:
     rollingUpdate:
@@ -20,13 +20,13 @@ spec:
   template:
     metadata:
       labels:
-        name: tomcat03
+        name: tomcat04
         tier: development
     spec:
       containers:
       - image: demoreg12.azurecr.io/tomcat:latest
         imagePullPolicy: Always
-        name: tomcat03
+        name: tomcat04
         ports:
         - containerPort: 8080
           protocol: TCP
