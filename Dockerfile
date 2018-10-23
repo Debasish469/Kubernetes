@@ -4,4 +4,7 @@ MAINTAINER Debasish Padhi
 
 COPY index.html /usr/local/tomcat/webapps/ROOT/
 
+EXPOSE 8080
+
+
 
