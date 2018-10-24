@@ -1,6 +1,6 @@
 FROM tomcat:8-alpine
 
-MAINTAINER Debasish Padhi
+MAINTAINER Debasish 
 
 COPY index.html /usr/local/tomcat/webapps/ROOT/
 
