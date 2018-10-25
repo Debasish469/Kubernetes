@@ -1,6 +1,6 @@
 FROM tomcat:8-alpine
 
-MAINTAINER Manikantha
+MAINTAINER Manikantha Tadi
 
 COPY index.html /usr/local/tomcat/webapps/ROOT/
 
