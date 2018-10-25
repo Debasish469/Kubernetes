@@ -2,7 +2,7 @@ FROM tomcat:8-alpine
 
 MAINTAINER Manikantha Tadi
 
-COPY index.html /usr/local/tomcat/webapps/ROOT/
+COPY index.html /var/lib/tomcat8/webapps/ROOT/
 
 EXPOSE 8080
 
